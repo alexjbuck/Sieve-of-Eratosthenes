@@ -1,10 +1,13 @@
 #include <bitset>
 #include <iostream>
+#include <time.h>
 
 #define nPrimes 50000000
 
 int main() {
 	std::bitset<nPrimes> primeArray;
+	clock_t t1,t2;
+	t1 = clock();
 
 	// Set all to 1 (possibly prime)
 	primeArray.set(); 
@@ -30,5 +33,7 @@ int main() {
 		}
 	}
 	std::cout << std::endl;
+	t2 = clock();
 	std::cout << "Found " << primeArray.count() << " primes between 2 and " << nPrimes << std::endl;
+	std::cout << "Total elapsed time: " << ((float)(t2-t1))/CLOCKS_PER_SEC << " Average " << ( ((float)(t2-t1)/CLOCKS_PER_SEC)/primeArray.count()) << " seconds per prime." << std::endl;
 }
