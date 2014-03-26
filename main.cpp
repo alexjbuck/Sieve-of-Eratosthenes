@@ -13,9 +13,11 @@ int main() {
 	primeArray.set();
 	primeArray.reset(0); // 1 is not prime.
 	// Array looks like
-	// 1 3 5 7 9 11 13 15 etc...
-	// 0 1 2 3 4 5  6  7
-	
+	//p  1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 etc...
+	//pI 0 1 2 3 4 5  6  7  8  9  10 11 12 13 14 15 16 17
+	//pA 0 1 1 1 1 1  1  1  1  1  1  1  1  1  1  1  1  1
+	//pA 0[1]1 1{0}1  1 {0} 1  1 {0} 1  1 {0} 1  1 {0} 1
+	//pA 0 1[1]1 0 1  1  0  1  1  0  1 {0} 0  1  1  0 {0}
 	int primeIndex = 0;
 	int prime;
 	int multipleIndex;
@@ -30,7 +32,8 @@ int main() {
 			std::cout << prime << " ";
 #endif
 			// Clear all multiples of primes
-			multipleIndex = primeIndex + prime ;
+			// multipleIndex = primeIndex + prime ;
+			multipleIndex = (prime*prime-1)/2;
 			while(multipleIndex<nArray) {
 				primeArray.reset(multipleIndex);
 				multipleIndex += prime;

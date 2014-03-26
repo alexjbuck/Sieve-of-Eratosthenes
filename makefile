@@ -1,5 +1,7 @@
-all:
+norm: 
 	g++ -o sieve main.cpp
+
+all: norm opt quiet quiet_opt
 
 opt:
 	g++ -o sieve_opt main.cpp -O3
