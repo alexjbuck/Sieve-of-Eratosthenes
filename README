@@ -1,0 +1,5 @@
+SIEVE OF ERASTOTHENES
+Alexander Buck
+
+simple implementation. Default build with 'make', builds a non-optimized non-quiet executable. Build options are 'opt' for -O3 optimizations, 'quiet' to suppress printing primes to console and 'quiet_opt' which combines them.
+
